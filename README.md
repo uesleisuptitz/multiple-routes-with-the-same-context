@@ -34,10 +34,10 @@ Esse projeto foi desenvolvido para demonstrar como é possível usar um contexto
 
 ## Solução
 
-Unir todas as rotas que precisam do mesmo contexto em um único elemento <Route>. Para fazer isso podemos seguir alguns passos:
+Unir todas as rotas que precisam do mesmo contexto em um único elemento `<Route>`. Para fazer isso podemos seguir alguns passos:
 
-- Juntar todos os `paths` e passar para o elemento <Route> como um `array`
-- Utilizar o método `render` do <Route> para colocar os componentes
+- Juntar todos os `paths` e passar para o elemento `<Route>` como um `array`
+- Utilizar o método `render` do `<Route>` para colocar os componentes
 - Usar as `props` do método `return` para identificar qual componente deve ser exibido
   O código abaixo ilusta o que deve ser feito:
 
