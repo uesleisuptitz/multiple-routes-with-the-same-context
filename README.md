@@ -2,13 +2,77 @@
   <img src="https://github.com/uesleisuptitz/multiple-routes-with-the-same-context/blob/master/public/capa.png" alt="Multiplas rotas com o mesmo contexto" width="100%" />
 </p>
 
-# Multiplas rotas com o mesmo contexto
+# Múltiplas rotas com o mesmo contexto
 
 Esse projeto foi desenvolvido para demonstrar como é possível usar um contexto em mais de uma rota, porém de forma que o mesmo contexto sirva para todas as rotas.
 
-## Funcionamento
+## Exemplo
 
-Ainda não disponível
+```jsx
+<Router>
+  <Switch>
+    <Route exact path="/">
+      <Home />
+    </Route>
+    <Route exact path="/produtos">
+      <Produtos />
+    </Route>
+    {/* Este código causa um erro! */}
+    {/* Já que um <Switch> só aceita elementos <Route> ou <Redirect> */}
+    {/* E abaixo temos um <MyContextProvider> */}
+    <MyContextProvider>
+      <Route exact path="/produto">
+        <Produto />
+      </Route>
+      <Route exact path="/editar-produto">
+        <EditarProduto />
+      </Route>
+    </MyContextProvider>
+  </Switch>
+</Router>
+```
+
+## Solução
+
+Unir todas as rotas que precisam do mesmo contexto em um único elemento <Route>. Para fazer isso podemos seguir alguns passos:
+
+- Juntar todos os `paths` e passar para o elemento <Route> como um `array`
+- Utilizar o método `render` do <Route> para colocar os componentes
+- Usar as `props` do método `return` para identificar qual componente deve ser exibido
+  O código abaixo ilusta o que deve ser feito:
+
+```jsx
+<Router>
+  <Switch>
+    <Route exact path="/">
+      <Home />
+    </Route>
+    <Route exact path="/produtos">
+      <Produtos />
+    </Route>
+    <Route
+      exact
+      path={["/produto", "/editar-produto"]}
+      render={(props) => {
+        const {
+          location: { pathname },
+        } = props;
+        return (
+          <MyContextProvider>
+            {pathname.includes("/produto") ? (
+              <Produto />
+            ) : pathname.includes("/editar-produto") ? (
+              <EditarProduto />
+            ) : (
+              <Redirect to="/" />
+            )}
+          </MyContextProvider>
+        );
+      }}
+    />
+  </Switch>
+</Router>
+```
 
 ## Tecnologias
 
