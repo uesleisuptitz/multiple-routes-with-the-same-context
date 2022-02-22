@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://alonza.com.br/wp-content/uploads/2021/07/react-native.png" alt="Multiplas rotas com o mesmo contexto" width="100%" />
+  <img src="https://github.com/uesleisuptitz/multiple-routes-with-the-same-context/blob/master/public/capa.png" alt="Multiplas rotas com o mesmo contexto" width="100%" />
 </p>
 
 # Multiplas rotas com o mesmo contexto
