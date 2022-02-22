@@ -38,8 +38,9 @@ Unir todas as rotas que precisam do mesmo contexto em um único elemento `<Route
 
 - Juntar todos os `paths` e passar para o elemento `<Route>` como um `array`
 - Colocar os componentes de tela dentro do método `render` do `<Route>`
-- Usar as `props` do método `render` para identificar qual componente deve ser exibido e retornado
-  O código abaixo ilusta o que deve ser feito:
+- Usar as `props` do método `render` para identificar qual componente deve ser exibido e retornado.
+
+O código abaixo ilusta o que deve ser feito:
 
 ```jsx
 <Router>
