@@ -37,8 +37,8 @@ Esse projeto foi desenvolvido para demonstrar como é possível usar um contexto
 Unir todas as rotas que precisam do mesmo contexto em um único elemento `<Route>`. Para fazer isso podemos seguir alguns passos:
 
 - Juntar todos os `paths` e passar para o elemento `<Route>` como um `array`
-- Utilizar o método `render` do `<Route>` para colocar os componentes
-- Usar as `props` do método `return` para identificar qual componente deve ser exibido
+- Colocar os componentes de tela dentro do método `render` do `<Route>`
+- Usar as `props` do método `render` para identificar qual componente deve ser exibido e retornado
   O código abaixo ilusta o que deve ser feito:
 
 ```jsx
