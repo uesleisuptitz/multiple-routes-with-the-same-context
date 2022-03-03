@@ -75,6 +75,10 @@ O código abaixo ilustra o que deve ser feito:
 </Router>
 ```
 
+## Atenção!
+
+Cuidado ao fazer `if` dentro das **rotas** da sua aplicação, pois se você não retornar um **componente** nas rotas, as rotas abaixo podem não funcionar corretamente. Retornar só o **contexto** pode gerar **problemas**!
+
 ## Tecnologias
 
 As seguintes tecnologias foram usadas na construção do projeto:
